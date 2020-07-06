@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Grid from './components/Grid';
+import getPrimeNumbers from './helpers/getPrimeNumbers';
+import getMultiplicationGrid from './helpers/getMultiplicationGrid';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [grid, setGrid] = useState();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    setGrid(getMultiplicationGrid(getPrimeNumbers(formData.get('noCount'))));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <form onSubmit={handleSubmit}>
+        <label> Prime numbers count: </label>
+        <input type="text" name="noCount" />
+        <input type="submit" name="submitBtn" value="Go!" />
+      </form>
+      <Grid data={grid} />
+    </>
   );
-}
+};
 
 export default App;

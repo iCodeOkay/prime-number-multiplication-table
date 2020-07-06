@@ -10,8 +10,11 @@
 - `npm run test` - Runs the tests
 
 ## Improvements
-- [] [Cypress](https://www.cypress.io/) for end-to-end
+- [] [Cypress](https://www.cypress.io/) for end-to-end testing
 - [] CICD
 - [] Improved UI
-- [] Logging
+- [] Improved Logging
 - [] Typescript (if application was to become more complex)
+- [] Linting
+- [] Validation of input
+- [] Useful error & validation messages
