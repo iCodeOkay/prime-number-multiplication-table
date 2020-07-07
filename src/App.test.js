@@ -3,19 +3,19 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 test('renders label', () => {
-  const { getByText } = render(<App />);
-  const label = getByText(/Prime numbers count/i);
+  const { getByTestId } = render(<App />);
+  const label = getByTestId('input-lbl');
   expect(label).toBeInTheDocument();
 });
 
 test('renders textbox', () => {
-  const { getByRole } = render(<App />);
-  const textbox = getByRole('textbox', { id: /input-noCount/i });
+  const { getByTestId } = render(<App />);
+  const textbox = getByTestId('no-count-tb');
   expect(textbox).toBeInTheDocument();
 });
 
 test('renders go button', () => {
-  const { getByRole } = render(<App />);
-  const button = getByRole('button', { id: /btn-submit/i });
+  const { getByTestId } = render(<App />);
+  const button = getByTestId('submit-btn');
   expect(button).toBeInTheDocument();
 });

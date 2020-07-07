@@ -16,9 +16,14 @@ const App = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label> Prime numbers count: </label>
-        <input type="text" name="noCount" />
-        <input type="submit" name="submitBtn" value="Go!" />
+        <label data-testid="input-lbl"> Prime numbers count: </label>
+        <input type="text" name="noCount" data-testid="no-count-tb" />
+        <input
+          type="submit"
+          name="submitBtn"
+          value="Go!"
+          data-testid="submit-btn"
+        />
       </form>
       <Grid data={grid} />
     </>
