@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Grid from './components/Grid';
 import getPrimeNumbers from './helpers/getPrimeNumbers';
 import getMultiplicationGrid from './helpers/getMultiplicationGrid';
-import './App.css';
 
 const App = () => {
   const [grid, setGrid] = useState();
