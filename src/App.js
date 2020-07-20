@@ -16,7 +16,7 @@ const App = () => {
     <>
       <form onSubmit={handleSubmit}>
         <label data-testid="input-lbl"> Prime numbers count: </label>
-        <input type="text" name="noCount" data-testid="no-count-tb" />
+        <input type="number" name="noCount" data-testid="no-count-tb" />
         <input
           type="submit"
           name="submitBtn"
